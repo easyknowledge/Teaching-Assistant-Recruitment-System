@@ -1,76 +1,38 @@
-\# Contributing to the TA Recruitment System
+# Contributing to the TA Recruitment System
 
+First off, thank you for considering contributing to this project! This document outlines the standard workflow and collaboration guidelines for **Group 37** to ensure a smooth Agile development process for the EBU6304 module.
 
+## 🌿 Branching Strategy
 
-Thank you for contributing to the Group 37 Project! This document outlines our team's standard workflow and collaboration guidelines to ensure a professional Agile development process.
+To maintain the integrity of our deliverables, we follow a strict **Feature Branch Workflow**. Please **do not commit directly** to the `main` branch.
 
+* **`main`**: The stable, production-ready branch containing finalized deliverables.
+* **`feature/*`**: Used for developing new documents or system features (e.g., `feature/ui-prototype`, `feature/database-design`).
+* **`fix/*`**: Used for minor corrections or formatting fixes.
 
+## 📝 Commit Message Convention
 
-\## 🌿 Branching Strategy
+To maintain a readable and professional project history, we strictly adhere to **Conventional Commits**. Please format your commit messages as follows:
 
+`[type]: [short description in lowercase]`
 
+**Allowed Types:**
+* `feat`: A new feature or document (e.g., adding the product backlog)
+* `fix`: A bug fix or typo correction
+* `docs`: Documentation only changes (e.g., updating README or CONTRIBUTING)
+* `refactor`: Restructuring files or directories without changing content
+* `style`: Formatting changes (e.g., CSS tweaks in the HTML prototype)
 
-To maintain a clean and stable project history, we follow the \*\*Feature Branch Workflow\*\*. Direct commits to the `main` branch are discouraged for major changes.
+*Example:* `feat: add initial high-fidelity HTML prototype for applicant role`
 
+## 🔄 Standard Workflow (Pull Request Process)
 
+1.  **Sync Local Repository:** Always run `git pull origin main` before starting new work to avoid conflicts.
+2.  **Create a Branch:** `git checkout -b feature/your-feature-name`
+3.  **Make Changes & Commit:** Work on your assigned tasks and commit using the convention above.
+4.  **Push to Remote:** `git push origin feature/your-feature-name`
+5.  **Code Review & Merge:** Open a Pull Request (PR) on GitHub. Ensure at least one other team member reviews the changes before merging into the `main` branch.
 
-\- \*\*`main`\*\*: Contains the final, stable version of our deliverables.
+## 🤝 Code of Conduct & Team Spirit
 
-\- \*\*`feature/\*`\*\*: Used for developing new documents or features (e.g., `feature/backlog-v1`).
-
-\- \*\*`fix/\*`\*\*: Used for minor corrections or formatting updates.
-
-
-
-\## 📝 Commit Message Convention
-
-
-
-We follow the \*\*Conventional Commits\*\* standard to make our project history easy to track:
-
-
-
-`\[type]: \[short description]`
-
-
-
-\*\*Types:\*\*
-
-\- `feat`: A new feature or document (e.g., `feat: upload project report`)
-
-\- `fix`: A bug fix or typo correction (e.g., `fix: update group number`)
-
-\- `docs`: Documentation updates (e.g., `docs: update readme`)
-
-\- `refactor`: Restructuring files/folders without changing content
-
-
-
-\*Example:\* `feat: finalize product backlog with MoSCoW prioritization`
-
-
-
-\## 🔄 Workflow
-
-
-
-1\. \*\*Pull\*\*: Always `git pull origin main` before starting.
-
-2\. \*\*Branch\*\*: Create a new branch `git checkout -b feature/your-task`.
-
-3\. \*\*Commit\*\*: Save your work with a meaningful message.
-
-4\. \*\*Merge\*\*: Once finalized, merge back to `main` via Pull Request or direct merge.
-
-
-
-\## 🤝 Quality Assurance
-
-
-
-Every deliverable (Excel, Word, or HTML) must be reviewed by at least one other team member to ensure:
-
-\- Alignment with EBU6304 requirements.
-
-\- Professional formatting and no placeholders.
-
+As Group 37, we are committed to fostering an open, welcoming, and collaborative Agile environment. Please ensure all discussions, document reviews, and feedback are constructive and professional. Let's build an outstanding system together!
