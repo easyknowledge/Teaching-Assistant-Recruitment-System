@@ -45,6 +45,14 @@ For the first assessment, the team is preparing:
 * `Report_group37.docx` and its exported PDF submission
 * GitHub evidence of branches, commits, pull requests, and peer reviews from all members
 
+## Recent Updates
+
+Recent repository improvements for the first assessment include:
+
+* clarifying the Iteration 1 repository scope and deliverables
+* documenting the expected GitHub collaboration workflow for every group member
+* improving the prototype with clearer assessment context, visible interaction feedback, and stronger mobile presentation
+
 ---
 
 ## Repository Structure
