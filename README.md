@@ -171,3 +171,8 @@ To satisfy the coursework requirements and keep contribution records clear:
 * each change should be committed and pushed through a pull request
 * every pull request should be approved by at least one teammate before merge
 * all meaningful progress should be visible on GitHub before each assessment checkpoint
+## 👥 Team Members
+
+| Name | Student ID | GitHub Username | Role |
+| :--- | :--- | :--- | :--- |
+| Li Congbo | 231222224 | 3440894772@qq.com | 待定 (例如: QA Engineer) |
