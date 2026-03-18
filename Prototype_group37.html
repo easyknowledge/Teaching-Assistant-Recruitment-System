@@ -214,6 +214,39 @@
         font-size: 0.95rem;
         max-width: 520px;
       }
+      .assessment-note {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 18px;
+        background: linear-gradient(135deg, #fff8eb 0%, #fff2d8 100%);
+        border: 1px solid #f0d7a1;
+        border-radius: var(--radius);
+        padding: 18px 22px;
+        margin: 24px auto 0;
+        max-width: 1320px;
+        box-shadow: var(--shadow-sm);
+      }
+      .assessment-note strong {
+        display: block;
+        color: #8a5a00;
+        margin-bottom: 4px;
+      }
+      .assessment-note p {
+        font-size: 0.9rem;
+        color: #6c5525;
+      }
+      .assessment-note .note-tag {
+        flex-shrink: 0;
+        background: #8a5a00;
+        color: #fff;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 6px 12px;
+      }
 
       .stats-row {
         display: grid;
@@ -429,6 +462,12 @@
         background: var(--accent);
         color: #fff;
       }
+      .btn[disabled] {
+        cursor: not-allowed;
+        opacity: 0.65;
+        transform: none;
+        box-shadow: none;
+      }
 
       /* ========== FORM ELEMENTS ========== */
       .form-grid {
@@ -557,6 +596,39 @@
         line-height: 1.5;
         border-left: 3px solid var(--accent);
       }
+      .toast {
+        position: fixed;
+        left: 50%;
+        bottom: 28px;
+        transform: translateX(-50%) translateY(16px);
+        min-width: 280px;
+        max-width: calc(100vw - 32px);
+        background: rgba(26, 26, 46, 0.94);
+        color: #fff;
+        border-radius: 14px;
+        padding: 14px 18px;
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 250;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      .toast strong {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 0.86rem;
+      }
+      .toast span {
+        display: block;
+        font-size: 0.8rem;
+        opacity: 0.85;
+      }
 
       /* ========== WORKLOAD BARS ========== */
       .workload-bar-container {
@@ -597,6 +669,10 @@
 
       /* ========== RESPONSIVE ========== */
       @media (max-width: 900px) {
+        .assessment-note {
+          margin: 20px 16px 0;
+          flex-direction: column;
+        }
         .stats-row {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -612,10 +688,44 @@
           grid-template-columns: 1fr;
         }
         .topbar {
-          padding: 0 16px;
+          height: auto;
+          min-height: 64px;
+          padding: 12px 16px;
+          gap: 12px;
+          align-items: flex-start;
+          flex-wrap: wrap;
+        }
+        .topbar nav {
+          order: 3;
+          width: 100%;
+          overflow-x: auto;
+          padding-bottom: 4px;
+        }
+        .topbar nav button {
+          white-space: nowrap;
+        }
+        .user-pill {
+          margin-left: auto;
+        }
+        .hero-banner {
+          padding: 28px 24px;
+        }
+        th,
+        td {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+        .proto-watermark {
+          position: static;
+          padding: 0 16px 18px;
+          text-align: center;
+        }
+        .toast {
+          bottom: 16px;
+          width: calc(100vw - 24px);
         }
         .dashboard {
-          padding: 20px 16px;
+          padding: 20px 16px 60px;
         }
       }
 
@@ -645,6 +755,18 @@
         <div class="avatar">ZW</div>
         <span>Zhang Wei</span>
       </div>
+    </div>
+
+    <div class="assessment-note">
+      <div>
+        <strong>Iteration 1 demo prototype</strong>
+        <p>
+          This interactive prototype highlights the key assessment journeys:
+          browsing and applying for roles, posting vacancies, reviewing
+          candidates, and managing workload recommendations.
+        </p>
+      </div>
+      <div class="note-tag">Visible for Review</div>
     </div>
 
     <!-- ===== PAGE 1: TA DASHBOARD ===== -->
@@ -1455,10 +1577,24 @@
     </div>
 
     <div class="proto-watermark">
-      BUPT TA Recruitment System · Prototype v1.0 · Group XXX
+      BUPT TA Recruitment System · Interactive Prototype v1.1 · Group 37
     </div>
 
+    <div class="toast" id="demo-toast" aria-live="polite"></div>
+
     <script>
+      const toast = document.getElementById("demo-toast");
+      let toastTimer;
+
+      function showToast(title, detail) {
+        toast.innerHTML = `<strong>${title}</strong><span>${detail}</span>`;
+        toast.classList.add("show");
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2400);
+      }
+
       function switchRole(role) {
         document
           .querySelectorAll(".page")
@@ -1481,7 +1617,96 @@
         };
         pill.querySelector(".avatar").textContent = avatars[role][0];
         pill.querySelector("span").textContent = avatars[role][1];
+        showToast(
+          "Role switched",
+          `Now viewing the ${role.toUpperCase()} workflow for the prototype demo.`,
+        );
       }
+
+      document.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const label = button.textContent.trim();
+          const row = button.closest("tr");
+          const moduleCell = row
+            ? row.querySelector("td strong")
+            : null;
+          const moduleName = moduleCell ? moduleCell.textContent.trim() : "this item";
+
+          if (label === "Apply") {
+            button.textContent = "Applied";
+            button.disabled = true;
+            showToast("Application submitted", `${moduleName} has been added to your draft application list.`);
+            return;
+          }
+
+          if (label === "View") {
+            showToast("Application details", `Opened the latest status summary for ${moduleName}.`);
+            return;
+          }
+
+          if (label === "Edit Profile") {
+            showToast("Profile editor", "Profile editing flow highlighted for the TA journey.");
+            return;
+          }
+
+          if (label === "Upload CV") {
+            showToast("CV upload", "Prototype confirms CV upload before final submission.");
+            return;
+          }
+
+          if (label === "Save as Draft") {
+            showToast("Draft saved", "The new TA position has been kept as a draft for review.");
+            return;
+          }
+
+          if (label === "Publish Position") {
+            showToast("Position published", "The vacancy is now visible to eligible TA applicants.");
+            return;
+          }
+
+          if (label === "Accept" || label === "Reject") {
+            const statusChip = row ? row.querySelector(".status-chip") : null;
+            const acceptButton = row ? row.querySelector(".btn-accept") : null;
+            const rejectButton = row ? row.querySelector(".btn-reject") : null;
+
+            if (statusChip) {
+              statusChip.className = `status-chip ${label === "Accept" ? "status-accepted" : "status-rejected"}`;
+              statusChip.textContent = label === "Accept" ? "Accepted" : "Rejected";
+            }
+            if (acceptButton) {
+              acceptButton.disabled = true;
+            }
+            if (rejectButton) {
+              rejectButton.disabled = true;
+            }
+
+            showToast(
+              `Applicant ${label.toLowerCase()}ed`,
+              `${moduleName} candidate status updated for the MO review workflow.`,
+            );
+            return;
+          }
+
+          if (label === "Export CSV") {
+            showToast("Export prepared", "Workload data is ready for CSV export in the admin workflow.");
+            return;
+          }
+
+          if (label === "Apply Suggestion") {
+            showToast("Recommendation applied", "AI workload balancing has been accepted for review.");
+            return;
+          }
+
+          if (label === "Dismiss") {
+            showToast("Recommendation dismissed", "The admin chose to keep the current workload allocation.");
+            return;
+          }
+
+          if (label === "Manage Invigilation") {
+            showToast("Invigilation planner", "Opened the scheduling flow for exam support assignments.");
+          }
+        });
+      });
     </script>
   </body>
 </html>
