@@ -66,6 +66,21 @@ Developed as the capstone group project for **EBU6304 Software Engineering (Quee
 
 ---
 
+## 👥 Team Identity & Contribution Tracking
+This section is strictly maintained per EBU6304 coursework rules – all updates must be submitted via Pull Request (PR) (no direct `main` branch pushes) and approved by at least one team member.
+
+### Core Team Information (QMID + GitHub Mapping)
+| Member Name      | Queen Mary ID (QMID) | GitHub Username | Primary Contribution Domain       |
+|------------------|----------------------|-----------------|-----------------------------------|
+| Changyang Zhou   | QM231221984          | @entelechyzi    | Product Backlog Planning          |
+
+### 📝 Compliance Notes
+- All PRs for updating this section must use the commit message format: `Update team identity - [Your Name] (QMID: [Your QMID])`
+- Contribution domains align with Sprint 1 deliverables (Product Backlog/Prototype/Documentation)
+- GitHub usernames must match the account used for PR submission (cross-verified by group lead)
+
+---
+
 ### 📍 Agile Scrum Practices
 - **Daily Standup**: 20:00 (GMT+8) via WeChat Voice (15 mins)
 - **Sprint Review**: Every 2 weeks (aligned with assessment milestones)
@@ -171,4 +186,4 @@ To satisfy the coursework requirements and keep contribution records clear:
 * each change should be committed and pushed through a pull request
 * every pull request should be approved by at least one teammate before merge
 * all meaningful progress should be visible on GitHub before each assessment checkpoint
-* commit messages should be clear and descriptive
+
