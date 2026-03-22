@@ -197,7 +197,7 @@ Development follows a four-iteration Agile Scrum cycle. Each iteration delivers 
 Task labels in the chart are shortened so bars stay proportional; the **Iteration Highlights** table below lists the full deliverable names.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'primaryColor':'#2563eb','primaryTextColor':'#ffffff','secondaryColor':'#64748b','tertiaryColor':'#475569','lineColor':'#94a3b8','textColor':'#f1f5f9','taskBkgColor':'#475569','taskTextColor':'#ffffff','taskTextLightColor':'#ffffff','taskTextDarkColor':'#ffffff','activeTaskBkgColor':'#2563eb','activeTaskBorderColor':'#1d4ed8','gridColor':'#334155','todayLineColor':'#ef4444'},'gantt':{'useWidth':1800,'useMaxWidth':true,'leftPadding':130,'rightPadding':200,'barHeight':24,'barGap':6,'fontSize':12,'sectionFontSize':13,'titleTopMargin':20,'topPadding':64}}}%%
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#2563eb','primaryTextColor':'#ffffff','secondaryColor':'#64748b','tertiaryColor':'#475569','lineColor':'#94a3b8','textColor':'#f1f5f9','taskBkgColor':'#475569','taskTextColor':'#ffffff','taskTextLightColor':'#ffffff','taskTextDarkColor':'#ffffff','activeTaskBkgColor':'#2563eb','activeTaskBorderColor':'#1d4ed8','gridColor':'#334155','todayLineColor':'#ef4444'},'gantt':{'useWidth':2000,'useMaxWidth':true,'leftPadding':130,'rightPadding':420,'barHeight':36,'barGap':14,'fontSize':13,'sectionFontSize':15,'titleTopMargin':36,'topPadding':112}}}%%
 gantt
     title Smart-TA Development Roadmap
     dateFormat  YYYY-MM-DD
