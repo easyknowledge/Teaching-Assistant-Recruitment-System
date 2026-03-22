@@ -199,10 +199,11 @@ Task labels in the chart are shortened so bars stay proportional; the **Iteratio
 ### Smart-TA Development Roadmap
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'primaryColor':'#2563eb','primaryTextColor':'#ffffff','secondaryColor':'#64748b','tertiaryColor':'#475569','lineColor':'#94a3b8','textColor':'#f1f5f9','titleColor':'#1e293b','taskBkgColor':'#475569','taskTextColor':'#ffffff','taskTextLightColor':'#ffffff','taskTextDarkColor':'#ffffff','taskTextOutsideColor':'#0f172a','activeTaskBkgColor':'#2563eb','activeTaskBorderColor':'#1d4ed8','gridColor':'#334155','todayLineColor':'#ef4444'},'gantt':{'useWidth':2000,'useMaxWidth':true,'leftPadding':130,'rightPadding':420,'barHeight':36,'barGap':14,'fontSize':13,'sectionFontSize':15,'titleTopMargin':20,'topPadding':96}}}%%
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#2563eb','primaryTextColor':'#ffffff','secondaryColor':'#64748b','tertiaryColor':'#475569','lineColor':'#94a3b8','textColor':'#334155','titleColor':'#1e293b','taskBkgColor':'#475569','taskTextColor':'#ffffff','taskTextLightColor':'#ffffff','taskTextDarkColor':'#ffffff','taskTextOutsideColor':'#0f172a','activeTaskBkgColor':'#2563eb','activeTaskBorderColor':'#1d4ed8','gridColor':'#cbd5e1','todayLineColor':'#94a3b8'},'gantt':{'useWidth':2000,'useMaxWidth':true,'leftPadding':130,'rightPadding':420,'barHeight':36,'barGap':14,'fontSize':14,'sectionFontSize':15,'titleTopMargin':20,'topPadding':96}}}%%
 gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
+    todayMarker stroke-width:1.5px,stroke:#2563eb,opacity:0.42,stroke-dasharray:6 5,stroke-linecap:round
 
     section Iteration 1 — Foundation
     Requirements & User Stories                     :done, i1a, 2026-02-17, 14d
