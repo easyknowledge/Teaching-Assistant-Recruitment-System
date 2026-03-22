@@ -194,29 +194,32 @@ The interactive prototype covers three role-based dashboards, each accessible vi
 
 Development follows a four-iteration Agile Scrum cycle. Each iteration delivers a shippable increment:
 
+Task labels in the chart are shortened so bars stay proportional; the **Iteration Highlights** table below lists the full deliverable names.
+
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#2563eb','primaryTextColor':'#ffffff','secondaryColor':'#64748b','tertiaryColor':'#475569','lineColor':'#94a3b8','textColor':'#f1f5f9','taskBkgColor':'#475569','taskTextColor':'#ffffff','taskTextLightColor':'#ffffff','taskTextDarkColor':'#ffffff','activeTaskBkgColor':'#2563eb','activeTaskBorderColor':'#1d4ed8','gridColor':'#334155','todayLineColor':'#ef4444'},'gantt':{'useWidth':1800,'useMaxWidth':true,'leftPadding':130,'rightPadding':200,'barHeight':24,'barGap':6,'fontSize':12,'sectionFontSize':13,'titleTopMargin':20,'topPadding':64}}}%%
 gantt
     title Smart-TA Development Roadmap
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
 
     section Iteration 1 — Foundation
-    Requirements Elicitation & User Stories   :done, i1a, 2026-02-17, 14d
-    Product Backlog Creation                  :done, i1b, after i1a, 7d
+    Requirements & User Stories                     :done, i1a, 2026-02-17, 14d
+    Product Backlog                                 :done, i1b, after i1a, 7d
 
     section Iteration 2 — Design & Prototype
-    System Architecture & UML Diagrams        :done, i2a, 2026-03-03, 10d
-    UI/UX Prototyping (HTML/CSS/JS)           :done, i2b, after i2a, 14d
+    Architecture & UML                              :done, i2a, 2026-03-03, 10d
+    UI/UX Prototype                                 :done, i2b, after i2a, 14d
 
     section Iteration 3 — Implementation
-    Core Module Development                   :active, i3a, 2026-03-24, 21d
-    AI Matching Engine Integration            :active, i3b, 2026-03-31, 14d
-    File-Based Persistence Layer              :active, i3c, 2026-04-01, 14d
+    Core Module Development                         :active, i3a, 2026-03-24, 21d
+    AI Matching Engine                              :active, i3b, 2026-03-31, 14d
+    File Persistence                                :active, i3c, 2026-04-01, 14d
 
     section Iteration 4 — Testing & Delivery
-    System Testing & UAT                      :i4a, 2026-04-14, 14d
-    Final Report & Presentation               :i4b, after i4a, 7d
-    Project Delivery                          :milestone, 2026-05-05, 0d
+    Testing & UAT                                   :i4a, 2026-04-14, 14d
+    Report & Presentation                           :i4b, after i4a, 7d
+    Project Delivery                                :milestone, 2026-05-05, 0d
 ```
 
 ### Iteration Highlights
