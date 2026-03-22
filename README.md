@@ -199,11 +199,11 @@ Task labels in the chart are shortened so bars stay proportional; the **Iteratio
 ### Smart-TA Development Roadmap
 
 ```mermaid
-%%{init: {'theme':'base','themeCSS':'.grid .tick text{font-size:13px!important;fill:#0f172a!important;font-weight:600!important;}.grid .tick line{opacity:0.85;}.today line{stroke-linecap:round!important;filter:drop-shadow(0 0 4px rgba(37,99,235,0.35));}','themeVariables':{'primaryColor':'#2563eb','primaryTextColor':'#ffffff','secondaryColor':'#64748b','tertiaryColor':'#475569','lineColor':'#94a3b8','textColor':'#334155','titleColor':'#1e293b','taskBkgColor':'#475569','taskTextColor':'#ffffff','taskTextLightColor':'#ffffff','taskTextDarkColor':'#ffffff','taskTextOutsideColor':'#0f172a','activeTaskBkgColor':'#2563eb','activeTaskBorderColor':'#1d4ed8','gridColor':'#cbd5e1','todayLineColor':'#2563eb'},'gantt':{'useWidth':2360,'useMaxWidth':true,'leftPadding':130,'rightPadding':460,'barHeight':36,'barGap':14,'fontSize':14,'sectionFontSize':15,'titleTopMargin':20,'topPadding':96}}}%%
+%%{init: {'theme':'base','themeCSS':'.grid .tick text{font-size:13px!important;fill:#0f172a!important;font-weight:600!important;}.grid .tick line{opacity:0.85;}.today line{stroke:#1d4ed8!important;stroke-width:3.5px!important;opacity:1!important;stroke-dasharray:none!important;stroke-linecap:round!important;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 8px rgba(29,78,216,0.85)) drop-shadow(0 0 14px rgba(37,99,235,0.45));}','themeVariables':{'primaryColor':'#2563eb','primaryTextColor':'#ffffff','secondaryColor':'#64748b','tertiaryColor':'#475569','lineColor':'#94a3b8','textColor':'#334155','titleColor':'#1e293b','taskBkgColor':'#475569','taskTextColor':'#ffffff','taskTextLightColor':'#ffffff','taskTextDarkColor':'#ffffff','taskTextOutsideColor':'#0f172a','activeTaskBkgColor':'#2563eb','activeTaskBorderColor':'#1d4ed8','gridColor':'#cbd5e1','todayLineColor':'#1d4ed8'},'gantt':{'useWidth':2360,'useMaxWidth':true,'leftPadding':130,'rightPadding':460,'barHeight':36,'barGap':14,'fontSize':14,'sectionFontSize':15,'titleTopMargin':20,'topPadding':96}}}%%
 gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %b %d
-    todayMarker stroke-width:2px,stroke:#2563eb,opacity:0.4,stroke-dasharray:2 12,stroke-linecap:round
+    todayMarker stroke-width:3px,stroke:#1d4ed8,opacity:0.95,stroke-linecap:round
 
     section Iteration 1 — Foundation
     Requirements & User Stories                     :done, i1a, 2026-02-17, 14d
